@@ -1,0 +1,53 @@
+{
+  "name": "ignite-spark-api",
+  "version": "1.0.0",
+  "description": "Enhanced API for Ignite Spark - AI-powered legal document analysis with NLP, financial risk assessment, and legal database integration",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "legal",
+    "documents",
+    "ai",
+    "openai",
+    "analysis",
+    "api",
+    "nlp",
+    "natural-language-processing",
+    "financial-risk",
+    "legal-database",
+    "counterparty-risk",
+    "contract-analysis",
+    "translation"
+  ],
+  "author": "The Genovators",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "compromise": "^14.10.0",
+    "cors": "^2.8.5",
+    "docx-parser": "^0.2.1",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.1.5",
+    "fs-extra": "^11.3.1",
+    "helmet": "^7.1.0",
+    "joi": "^17.11.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "natural": "^6.7.0",
+    "openai": "^4.63.0",
+    "pdf-parse": "^1.1.1",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

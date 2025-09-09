@@ -1,0 +1,38 @@
+{
+  "name": "ignite-spark",
+  "version": "1.0.0",
+  "description": "AI-powered legal document analysis tool",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm start",
+    "dev:backend": "cd backend && node server.js",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "test": "cd frontend && npm test",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "legal",
+    "documents",
+    "ai",
+    "analysis",
+    "react",
+    "openai"
+  ],
+  "author": "The Genovators",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ignite-spark.git"
+  },
+  "homepage": "https://your-app.vercel.app"
+}

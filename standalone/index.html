@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Docs Demystifier - Standalone</title>
+  <!-- Keep existing UI styles: Tailwind CDN and any custom styles can be added here -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* You can paste your existing standalone CSS here if any */
+  </style>
+</head>
+<body class="bg-gray-50">
+  <div id="app" class="min-h-screen">
+    <div class="max-w-4xl mx-auto py-10 px-4">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">Legal Docs Demystifier (Standalone)</h1>
+      <p class="text-gray-600 mb-6">This standalone page preserves the current UI layout, CSS, and JS behaviors.</p>
+
+      <!-- Upload UI -->
+      <div class="bg-white rounded-xl shadow p-6 mb-8">
+        <label class="block text-lg font-semibold text-gray-900 mb-4">Select Document</label>
+        <input id="fileInput" type="file" accept=".pdf,.docx" class="block w-full mb-4" />
+        <button id="analyzeBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Analyze Document</button>
+        <p id="error" class="text-red-600 mt-3 hidden"></p>
+      </div>
+
+      <!-- Results -->
+      <div id="results" class="hidden space-y-6">
+        <div class="bg-white rounded-xl shadow p-6">
+          <h2 class="text-2xl font-semibold mb-4">Summary</h2>
+          <p id="summary" class="text-gray-700"></p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6">
+          <h2 class="text-2xl font-semibold mb-4">Risk Assessment</h2>
+          <div id="risk" class="text-gray-700"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Minimal JS to preserve standalone interactions without changing UI
+    const fileInput = document.getElementById('fileInput');
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    const errorEl = document.getElementById('error');
+    const results = document.getElementById('results');
+    const summary = document.getElementById('summary');
+    const risk = document.getElementById('risk');
+
+    analyzeBtn.addEventListener('click', () => {
+      const file = fileInput.files[0];
+      errorEl.classList.add('hidden');
+      if (!file) {
+        errorEl.textContent = 'Please select a file to upload';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      if (!['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(file.type)) {
+        errorEl.textContent = 'Please select a PDF or DOCX file';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      if (file.size > 10 * 1024 * 1024) {
+        errorEl.textContent = 'File size must be less than 10MB';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      // Mocked output preserving UI behavior
+      results.classList.remove('hidden');
+      summary.textContent = 'This is a standalone demo. Connect the backend to get real AI-powered summaries.';
+      risk.textContent = 'Overall Risk: Medium (Demo)';
+    });
+  </script>
+</body>
+</html>
+
