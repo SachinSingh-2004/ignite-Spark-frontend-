@@ -1,15 +1,11 @@
 {
   "version": 2,
   "name": "ignite-spark",
-  "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
+  "functions": {
+    "backend/**/*.js": {
+      "runtime": "nodejs18.x"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/api/(.*)",
@@ -26,10 +22,6 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "backend/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
   }
 }
+
